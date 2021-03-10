@@ -16,6 +16,7 @@ ResizeStorageStatus resize_storage(Book *&storage, int size, int new_capacity) {
   for (int i = 0; i < size; i++){
     temp[i] = storage[i];
   }
+
   delete storage;
   storage = temp;
   return ResizeStorageStatus::SUCCESS;
@@ -29,8 +30,7 @@ BookStore::BookStore(const std::string &name) : name_{name} {
   }
 
   // здесь мог бы быть ваш сотрясающий землю и выделяющий память код ...
-  storage_capacity_ = 0;
-  storage_size_ = 0;
+  storage_capacity_ = kInitStorageCapacity;
   storage_ = new Book [kInitStorageCapacity];
 }
 
