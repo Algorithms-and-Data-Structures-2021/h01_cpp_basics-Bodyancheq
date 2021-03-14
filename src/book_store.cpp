@@ -17,7 +17,7 @@ ResizeStorageStatus resize_storage(Book *&storage, int size, int new_capacity) {
     temp[i] = storage[i];
   }
 
-  delete storage;
+  delete[] storage;
   storage = temp;
   return ResizeStorageStatus::SUCCESS;
 }
