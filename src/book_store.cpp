@@ -28,11 +28,13 @@ BookStore::BookStore(const std::string &name) : name_{name} {
   if (name.empty()) {
     throw std::invalid_argument("BookStore::name must not be empty");
   }
-
-  // здесь мог бы быть ваш сотрясающий землю и выделяющий память код ...
-  storage_capacity_ = kInitStorageCapacity;
-  storage_ = new Book [kInitStorageCapacity];
-  storage_size_ = 0;
+  else {
+    // здесь мог бы быть ваш сотрясающий землю и выделяющий память код ...
+    storage_capacity_ = kInitStorageCapacity;
+    storage_ = new Book[kInitStorageCapacity];
+    storage_size_ = 0;
+    name_ = name;
+  }
 }
 
 // 3. реализуйте деструктор ...
